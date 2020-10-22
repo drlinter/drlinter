@@ -29,7 +29,6 @@ import datetime
 from statistics import mean
 from gym import wrappers
 
-
 class MyModel(tf.keras.Model):
     def __init__(self, num_states, hidden_units, num_actions):
         super(MyModel, self).__init__()
@@ -47,7 +46,6 @@ class MyModel(tf.keras.Model):
             z = layer(z)
         output = self.output_layer(z)
         return output
-
 
 class DQN:
     def __init__(self, num_states, num_actions, hidden_units, gamma, max_experiences, min_experiences, batch_size, lr):
@@ -103,7 +101,6 @@ class DQN:
         for v1, v2 in zip(variables1, variables2):
             v1.assign(v2.numpy())
 
-
 def play_game(env, TrainNet, TargetNet, epsilon, copy_step):
     rewards = 0
     iter = 0
@@ -130,7 +127,6 @@ def play_game(env, TrainNet, TargetNet, epsilon, copy_step):
         if iter % copy_step == 0:
             TargetNet.copy_weights(TrainNet) 
     return rewards, mean(losses)
-
 
 def main():
     gamma = 0.99 
@@ -167,7 +163,6 @@ def main():
                   "episode loss: ", losses)
     print("avg reward for last 100 episodes:", avg_rewards)
     env.close()
-
 
 if __name__ == '__main__':
     for i in range(3):
