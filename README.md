@@ -1,12 +1,12 @@
-# RLinter
+# DRLinter
 
-`RLinter` is a toolset for verifying deep reinforcement learning(DRL) models using meta-modeling and graph transformations.
+`DRLinter` is a toolset for verifying deep reinforcement learning(DRL) models using meta-modeling and graph transformations.
 This tool set performs verification of DRL models that are specified using graph transformations by the Groove tool set.
 First, the DRL program is parsed to extract relevant information according to the meta-model. The model of the program is a graph that conforms to the type graph (meta-model). Then, the graph is verified by `Groove` as a model checker. The output graph of Groove is used to extract relevant Information for the final report.
 
 `groove-x_x_x-bin` and `DRL-metamodel.gps` folders are the Groove tollset and type graph respectively which are needed for running `NeuraLint`.
 
-`graphs` folder is also used for intermediate calculation and required to run `RLinter` tool.
+`graphs` folder is also used for intermediate calculation and required to run `DRLinter` tool.
 
 The tool is written in `Python` and it can be easily run in the command line. To use the tool set, please enter following options with running command:
 ```
@@ -174,13 +174,13 @@ if __name__ == '__main__':
         main()
 ```
 
-User can use following command to pars mentioned code using `RLinter`. 
+User can use following command to pars mentioned code using `DRLinter`. 
 
 ```
 $ python EndToEnd.py cartpole_tensorflow.py result
 ```
 
-The result of `RLinter` is
+The result of `DRLinter` is
 
 ```
 Wrong initialization.
