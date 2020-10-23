@@ -8,27 +8,27 @@ def tagEditor(tag):
 
 def faultCodeTranslator(fault):
     if fault == "f01":
-        return "Wrong initialization."
+        return "Wrong initialization: Initializing the environment in a wrong way."
     elif fault == "f02":
-        return "Missing stepping the environment."
+        return "Missing stepping the environment: Failure to timely pushthe environment to a new state and get the associated reward."
     elif fault == "f03":
-        return "Missing terminal state."
+        return "Missing terminal state of the environment."
     elif fault == "f04":
-        return "Missing reset/close environment."
+        return "Missing reset/close environment: Missing terminating/restarting of each round of agent interaction with its environment."
     elif fault == "f05":
-        return "Missing exploration."
+        return "Missing exploration: Failure to explore the environment."
     elif fault == "f06":
-        return "Wrong update rule."
+        return "Wrong update rule: Using an incorrect update rule for value or policy function including suboptimal learning rate and wrong implementation of the update rule."
     elif fault == "f07":
-        return "Suboptimal exploration rate."
+        return "Suboptimal exploration rate: Suboptimal exploration parameters or suboptimal decay rate."
     elif fault == "f08":
-        return "Suboptimal network update frequency."
+        return "Suboptimal network update frequency: Suboptimal update frequency of networks’ parameters."
     elif fault == "f09":
-        return "Wrong network update."
+        return "Wrong network update: Wrong update of networks or its parameters"
     elif fault == "f10":
-        return "Wrong activation for output"
+        return "Wrong activation for output: Failure to define a correct activation function for the output layer "
     elif fault == "f11":
-        return "Wrong output."
+        return "Wrong output:  Failure to define a correct output layer for the network with respect to the environment and algorithm."
 
     else:
         return None

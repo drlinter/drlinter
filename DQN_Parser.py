@@ -131,7 +131,7 @@ class RL_model:
 graphValues = {"env_close":[None,"false"], "update_exploration_rate":[None, "false"],
                "terminal_state":[None,"false"], "initialize_env_correct":[None, "false"], "initialize_env":[None, None]
                , "exploration_check":[None, "false"], "net_last_layer":[None,None], "output":[None,"false"]
-               ,"in_correct_step":[None, "false"], "update_eq":[None, "false"], "terminate_isCorrect":[None, "false"]}
+               ,"in_correct_step":[None, "false"], "update_eq":[None, "false"], "terminate_isCorrect":[None, "false"], "update_target":[None, "false"]}
 
 def checkEnvReset(node):
     if isinstance(node, ast.Expr) and hasattr(node, "value") and hasattr(node.value, "func") and node.value.func.attr == "reset":
@@ -284,4 +284,5 @@ if __name__ == '__main__':
     # main("buggy-clones/DQN_Wrong_initialization_missing.py")
     # main("buggy-clones/DQN_Wrong_output.py")
     # main("buggy-clones/DQN_Wrong_update_rule.py")
-    main("buggy-clones/DQN_Missing_terminal_state.py")
+    # main("buggy-clones/DQN_Missing_terminal_state.py")
+    main("buggy-clones/DQN_Wrong_network_update.py")
