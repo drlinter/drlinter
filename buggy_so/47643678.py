@@ -48,7 +48,7 @@ class ReplayBuffer:
         def fit(self, number_of_epsiodes, batch_size):
             for _ in generator(number_of_epsiodes):
                 total_reward=0
-                state=env.reset()
+                state=env.reset() #@DRLinter-->initialize_env_correct
                 while True:
                     #self.env.render()
                     q_values_for_state=self.predict_one(state)

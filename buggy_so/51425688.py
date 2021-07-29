@@ -93,7 +93,7 @@ for episode in range(total_episodes):
                 if i is 0:
                     g_y[(g_y.shape[0] - 1) - i][0] = g_y[(g_y.shape[0] - 1) - i][0]
                 else:
-                    g_y[(g_y.shape[0] - 1) - i][0] = g_y[(g_y.shape[0] - 1) - i][0] + gamma * g_y[(g_y.shape[0] - 1) - i + 1][0] #update_equation
+                    g_y[(g_y.shape[0] - 1) - i][0] = g_y[(g_y.shape[0] - 1) - i][0] + gamma * g_y[(g_y.shape[0] - 1) - i + 1][0] #@DRLinter-->update_eq
 
             if mem_x.shape[0] is 1:
                 mem_x = g_x
