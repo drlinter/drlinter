@@ -83,7 +83,7 @@ if __name__ == "__main__":
     episodes = 10000 #@DRLinter-->epoch_count
     rewardL = []
     for e in range(episodes):
-        state = env.reset() #@DRLinter-->initialize_env_correct
+        state = env.reset() #@DRLinter-->initialize_env_correct,env_close
         state = np.reshape(state, [1, 4])
         for time_t in range(500):
             #env.render()
@@ -93,7 +93,7 @@ if __name__ == "__main__":
             agent.remember(state, action, reward, next_state, done)
             state = next_state
             if done:
-                break #@DRLinter-->terminal_state
+                break #@DRLinter-->terminal_state,terminate_isCorrect
         avgs.append(time_t)
         rewardLA.append(sum(avgs)/len(avgs))
         print("episode: ", e, "score: ", time_t)

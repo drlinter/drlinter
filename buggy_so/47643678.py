@@ -13,7 +13,7 @@ class ReplayBuffer:
         number_of_actions =len(q_values)
         action_probabilites = np.ones(number_of_actions, dtype=float)*epsilon/number_of_actions
         best_action = np.argmax(q_values)
-        action_probabilites[best_action]+= (1-epsilon)
+        action_probabilites[best_action]+= (1-epsilon) #@DRLinter-->update_exploration_rate
         return np.random.choice(number_of_actions, p=action_probabilites) #@DRLinter-->exploration_check
 
     class DQNAgent:
@@ -48,7 +48,7 @@ class ReplayBuffer:
         def fit(self, number_of_epsiodes, batch_size):
             for _ in generator(number_of_epsiodes):
                 total_reward=0
-                state=env.reset() #@DRLinter-->initialize_env_correct
+                state=env.reset() #@DRLinter-->initialize_env_correct,env_close
                 while True:
                     #self.env.render()
                     q_values_for_state=self.predict_one(state)

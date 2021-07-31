@@ -56,7 +56,7 @@ max_steps = 40000
 for episode in range(total_episodes):
     g_x = np.zeros(shape=(1, environment_parameters + num_of_possible_actions))
     g_y = np.zeros(shape=(1, 1))
-    q_t = env.reset()
+    q_t = env.reset() #@DRLinter-->env_close,terminate_isCorrect
     episode_reward = 0
 
     for step_number in range(max_steps):

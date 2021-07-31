@@ -97,10 +97,10 @@ while True:
     if e > e_threshold:
         e -= e_decay
 
-    obs, r_t, done, info = env.step(num2str(a_t, obs)) #@DRLinter-->in_correct_step
+    obs, r_t, done, info = env.step(num2str(a_t, obs)) #@DRLinter-->in_correct_step,env_close
 
     if obs == [None]:
-        continue #@DRLinter-->terminal_state
+        continue #@DRLinter-->terminal_state,terminate_isCorrect
 
     x_t2 = preprocess(obs)
     print(x_t2.shape, s_t1[:,:,0:3].shape)

@@ -91,7 +91,7 @@ A2C = cartpole(sess, env)
 episodes = 2000
 reward_history = []
 for i in range(episodes):
-    state = env.reset() #@DRLinter-->initialize_env_correct
+    state = env.reset() #@DRLinter-->initialize_env_correct,terminate_isCorrect
     reward_total = 0
     while True:
         state = np.array(state).reshape((1, 4))
@@ -100,7 +100,7 @@ for i in range(episodes):
             env.render()
 
         action = A2C.predict_action(state)
-        new_state, reward, done, _ = env.step(action)
+        new_state, reward, done, _ = env.step(action) #@DRLinter-->in_correct_step,env_close
         reward_total += reward
         A2C.memory.append([state, action, reward, new_state, done])
         A2C.experience_replay()
