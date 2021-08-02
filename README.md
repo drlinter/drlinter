@@ -1,6 +1,6 @@
 # DRLinter
 
-`DRLinter` is a toolset for verifying deep reinforcement learning(DRL) models using meta-modeling and graph transformations.
+`DRLinter` is a toolset for verifying deep reinforcement learning (DRL) models using meta-modeling and graph transformations.
 This tool set performs verification of DRL models that are specified using graph transformations by the Groove tool set.
 First, the DRL program is parsed to extract relevant information according to the meta-model. The model of the program is a graph that conforms to the type graph (meta-model). Then, the graph is verified by `Groove` as a model checker. The output graph of Groove is used to extract relevant Information for the final report.
 
