@@ -1,6 +1,7 @@
 import os
 import sys
 import DQN_Parser
+import DQN_Parser_annot
 import GrooveParser
 import time
 
@@ -9,11 +10,16 @@ def main():
     groovePath = "groove-5_7_4-bin/groove-5_7_4/bin/"
     grammarName = "DRL-metamodel"
     arguments = sys.argv
-    if len(arguments) != 3:
-        raise SystemExit('usage: endtoend.py [input filename] [output filename]')
+    if len(arguments) != 4:
+        raise SystemExit('usage: endToEnd.py [input filename] [parser type] [output filename]')
     else:
         fileName = arguments[1]
-        resultFileName = arguments[2]
+        parser_type = arguments[2]
+        resultFileName = arguments[3]
+
+        if parser_type not in ["annot", "synth"]:
+            raise SystemExit("Error : parser type should be 'annot' or 'synth'")
+
         FileNameWithoutPath = fileName.split(os.path.sep)[-1]
         file_name, file_extension = os.path.splitext(FileNameWithoutPath)
         grooveOutputFileName = f"{file_name}_GrooveOut"
@@ -26,13 +32,18 @@ def main():
     try:
         print("Generating model (graph)...")
         start_time_parser = time.time()
-        DQN_Parser.main(fileName)
+        if parser_type == "annot":
+            DQN_Parser_annot.main(fileName)
+        elif parser_type == "synth":
+            DQN_Parser.main(fileName)
         parserTime = time.time()-start_time_parser
+
+        print(groovePath)
 
         print("Running Model Checker (Groove)...")
         start_timeGroove = time.time()
         os.system(
-            f'java -jar {groovePath}Generator.jar -f graphs/{grooveOutputFileName}.gst -s bfs {grammarName}.gps graphs/{file_name}.gst')
+            f'java -jar {groovePath}Generator.jar -f graphs/{grooveOutputFileName}.gst -s bfs {groovePath}{grammarName}.gps graphs/{file_name}.gst')
         grooveTime = time.time()-start_timeGroove
 
     except:
