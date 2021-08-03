@@ -8,11 +8,15 @@ First, the DRL program is parsed to extract relevant information according to th
 
 `graphs` folder is also used for intermediate calculation and required to run `DRLinter` tool.
 
+There are also two parsers to parse the DRL programs. The first one is usable for the DRL programs follow the sample template. The second one can be used for the DRL programs annotated with predefined annotations. 
+
 The tool is written in `Python` and it can be easily run in the command line. To use the tool set, please enter following options with running command:
 ```
-$ python endToEnd.py [name of DRL programs (.py)] [name of the output file]
+$ python endToEnd.py [name of DRL programs (.py)] [parser_type] [name of the output file]
 ```
 - `[name of DRL programs (.py)]` should be entered with `.py`
+ 
+- `[parser type]` should be `annot` or `synth`
 
 - `[name of the output file]` should be entered without file type
 
