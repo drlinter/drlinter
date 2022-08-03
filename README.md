@@ -188,15 +188,15 @@ Wrong initialization.
 ## The Paper
 You can find the paper [here]([https://dl.acm.org/doi/abs/10.1145/3470006](https://link.springer.com/article/10.1007/s10515-021-00313-x)) and the citation is as follows:
 
-  @article{nikanjam2022faults,
-  title={Faults in deep reinforcement learning programs: a taxonomy and a detection approach},
-  author={Nikanjam, Amin and Morovati, Mohammad Mehdi and Khomh, Foutse and Ben Braiek, Houssem},
-  journal={Automated Software Engineering},
-  volume={29},
-  number={1},
-  pages={1--32},
-  year={2022},
-  publisher={Springer},
-  url = {https://link.springer.com/article/10.1007/s10515-021-00313-x},
-  doi = {10.1007/s10515-021-00313-x}
-  }
+    @article{nikanjam2022faults,
+    title={Faults in deep reinforcement learning programs: a taxonomy and a detection approach},
+    author={Nikanjam, Amin and Morovati, Mohammad Mehdi and Khomh, Foutse and Ben Braiek, Houssem},
+    journal={Automated Software Engineering},
+    volume={29},
+    number={1},
+    pages={1--32},
+    year={2022},
+    publisher={Springer},
+    url = {https://link.springer.com/article/10.1007/s10515-021-00313-x},
+    doi = {10.1007/s10515-021-00313-x}
+    }
