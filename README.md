@@ -176,7 +176,7 @@ if __name__ == '__main__':
 User can use following command to pars mentioned code using `DRLinter`. 
 
 ```
-$ python EndToEnd.py cartpole_tensorflow.py result
+$ python EndToEnd.py cartpole_tensorflow.py synth result
 ```
 
 The result of `DRLinter` is
